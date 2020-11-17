@@ -34,14 +34,16 @@ def stop():
     x=input()
     global STOP_THIS
     global TASK_LOG
-    if x == '':
+    if x != 'q':
         STOP_THIS = True
     elif x == 'q':
+        print('generating report...')
         fig = plotter.figure(figsize=(16,9))
         tno = list(TASK_LOG.keys())
         ttime = list(TASK_LOG.values())
         plotter.bar(tno,ttime)
         plotter.savefig('stats.png')
+        print('done! report saved to stats.png')
         sys.exit(0)
 
 if __name__=='__main__':
