@@ -24,6 +24,7 @@ def timer(countdown):
             TOTAL_TIME += task_time
             print('total time:   '+str(TOTAL_TIME)+'\n')
             secs = countdown
+            os.system('play -nq -t alsa synth 0.25 sine 440')
             STOP_THIS = False
         time.sleep(1)
         secs -=1
